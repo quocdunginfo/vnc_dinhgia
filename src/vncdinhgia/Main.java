@@ -52,22 +52,46 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnSetAuthen = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Find");
+
+        btnSetAuthen.setText("Set Authen");
+        btnSetAuthen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSetAuthenActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 547, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(btnSetAuthen)
+                .addContainerGap(429, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 252, Short.MAX_VALUE)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(btnSetAuthen)
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSetAuthenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSetAuthenActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+          public void run() {
+               SetAuthen frame = new SetAuthen();
+               frame.setVisible(true);
+          }
+        });
+    }//GEN-LAST:event_btnSetAuthenActionPerformed
     
     /**
      * @param args the command line arguments
@@ -104,12 +128,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
         WPHelper helper = new WPHelper();
-        helper.setAuthen();
-        helper.getContent();
+        helper.logIn();
+        helper.update();
     }
    
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSetAuthen;
     // End of variables declaration//GEN-END:variables
     
 }
